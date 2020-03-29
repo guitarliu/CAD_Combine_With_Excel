@@ -13,7 +13,7 @@ def write_data_into_excel(excel_name, sheet_num, *args):
     wb = copy(rb)    
     wn = wb.get_sheet(sheet_num) # get the sheet of wb
     row_start = len(wn.get_rows()) # get the total rows of wn
-    for i in range(len(args)):
+    for i in range(1, len(args)):
         wn.write(row_start, i, args[i])
     wb.save(os.getcwd() + "/" + excel_name)
 
