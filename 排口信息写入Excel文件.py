@@ -31,6 +31,7 @@ def get_and_write_data(file_name, excel_name, sheet_num):
             pipe_diameter = text_content.split("/")[1]
             elevation = text_content.split("/")[2]
             text_info = text_name, text_x_cood, text_y_cood, pipe_diameter, elevation
+            print(text_info)
             print("Begin to write data into excel files******************")
             write_data_into_excel(excel_name, sheet_num, *text_info)
 
