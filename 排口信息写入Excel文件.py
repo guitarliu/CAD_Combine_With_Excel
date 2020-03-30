@@ -36,11 +36,11 @@ def get_and_write_data(file_name, excel_name, sheet_num):
             print("Begin to write data into excel files******************")
             write_data_into_excel(excel_name, sheet_num, *text_info)
 
-
+global excel_name
 for root, dirs, files in os.walk(os.getcwd()):
     for filename in files:
         if ".xls" in filename:
-            global excel_name
+            # global excel_name (please notice this usage, it's wrong on Centos7 and can work on windows10)
             excel_name = filename
             print("[+]Get the excel file %s********************" % filename)
         if ".dxf" in filename:
